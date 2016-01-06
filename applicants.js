@@ -21,12 +21,20 @@ const main = () => {
     const techPreferences = row['Tech stack/expertise'].split(', ')
     const companyPreferences = [row['1st company choice'], row['2nd company choice'], row['3rd company choice']].filter(co => co != 'No particular preference')
     const {allMatches, perfectMatches} = matchStudent(techPreferences, companyPreferences)
-    logStudent(name, allMatches, perfectMatches)
+    logStudent(name, techPreferences, companyPreferences, allMatches, perfectMatches)
   })
 }
 
-const logStudent = (name, allMatches, perfectMatches) => {
+const logStudent = (name, techPreferences, companyPreferences, allMatches, perfectMatches) => {
   console.log(colors.blue.bold(name))
+  console.log()
+
+  console.log(colors.bold('Tech preferences'))
+  console.log(techPreferences.join(', '))
+  console.log()
+
+  console.log(colors.bold('Company preferences'))
+  companyPreferences.forEach(company => console.log(colors.green(company)))
   console.log()
 
   const logMatch = ([company, techOverlap]) => {
