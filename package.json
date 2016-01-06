@@ -1,0 +1,12 @@
+{
+  "name": "hackcampus-matcher",
+  "version": "0.0.1",
+  "description": "",
+  "author": "harry@hackcampus.io",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "csv-parser": "^1.9.1",
+    "request": "^2.67.0"
+  }
+}
